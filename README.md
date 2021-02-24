@@ -1,10 +1,12 @@
-# Foobar
+# 2dcovid19_final
 
 Use DD-Net to reconstruct CT images with higher quality, and classify CT images for COVID-19 positive or negative.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [conda](https://docs.conda.io/en/latest/) or [pip](https://pip.pypa.io/en/stable/) to install required packages. 
+
+Docker installation instruction: example_use_analysisAI.pdf
 
 ```bash
 conda install numpy
@@ -14,21 +16,6 @@ conda install -c anaconda pillow
 pip install scikit-image
 pip install pathlib
 ```
+## Hardware requirements
 
-## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+PyTorch CUDA requires Nvidia GPU with compute capability 6.0 or higher. The network can also run on CPU at low speed.
