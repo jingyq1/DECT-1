@@ -1,4 +1,4 @@
-# DenseNet and Deconvolution Neural Network (DD-Net) for image enhancement
+# DenseNet and Deconvolution Neural Network (DD-Net) for Image enhancement
 
 DD-Net is a convolutional neural network that is used for computed tomography image enhancement. The network uses DenseNet blocks for building feature maps and Deconvolution for image reconstruction. DD-Net shows superior performance compared to state of the art CT image reconstrucion/enhancement algorithms. 
 
