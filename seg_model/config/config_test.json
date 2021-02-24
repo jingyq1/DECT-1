@@ -1,0 +1,105 @@
+{
+  "batch_size": 1,
+  "pre_transforms": [
+    {
+      "name": "LoadNifti",
+      "args": {
+        "fields": "image",
+        "as_closest_canonical": true
+      }
+    },
+    {
+      "name": "ConvertToChannelsFirst",
+      "args": {
+        "fields": "image"
+      }
+    },
+    {
+      "name": "ScaleByResolution",
+      "args": {
+        "fields": "image",
+        "target_resolution": [
+          0.8,
+          0.8,
+          5.0
+        ]
+      }
+    },
+    {
+      "name": "ScaleIntensityRange",
+      "args": {
+        "fields": "image",
+        "a_min": -1500,
+        "a_max": 500,
+        "b_min": 0.0,
+        "b_max": 1.0,
+        "clip": true
+      }
+    }
+  ],
+  "post_transforms": [
+    {
+      "name": "ArgmaxAcrossChannels",
+      "args": {
+        "fields": "model"
+      }
+    },
+    {
+      "name": "KeepBinaryLungCC",
+      "path": "byot.keep_binary_lung_connected_component.KeepBinaryLungCC",
+      "args": {
+        "field": "model",
+        "min_size": 5000,
+        "min_ratio": 0.1
+      }
+    },
+    {
+      "name": "RestoreOriginalShape",
+      "args": {
+        "field": "model",
+        "src_field": "image",
+        "is_label": true
+      }
+    },
+    {
+      "name": "CopyProperties",
+      "args": {
+        "fields": "model",
+        "from_field": "image",
+        "properties": [
+          "affine",
+          "original_affine",
+          "as_canonical"
+        ]
+      }
+    }
+  ],
+  "writers": [
+    {
+      "name": "WriteNifti",
+      "args": {
+        "field": "model",
+        "dtype": "uint8",
+        "write_path": "{MMAR_EVAL_OUTPUT_PATH}",
+        "revert_canonical": true
+      }
+    }
+  ],
+  "inferer": {
+    "name": "TFScanWindowInferer",
+    "args": {
+      "roi_size": [
+        288,
+        288,
+        64
+      ],
+      "batch_size": 3
+    }
+  },
+  "model_loader": {
+    "name": "CheckpointLoader",
+    "args": {
+      "checkpoint_dir": "{MMAR_CKPT_DIR}"
+    }
+  }
+}

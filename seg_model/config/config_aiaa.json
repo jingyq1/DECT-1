@@ -1,0 +1,143 @@
+{
+  "version": "3",
+  "type": "segmentation",
+  "labels": [
+    "lung"
+  ],
+  "description": "A pre-trained model for volumetric (3D) segmentation of the Lung from CT image",
+  "pre_transforms": [
+    {
+      "name": "LoadNifti",
+      "args": {
+        "fields": "image",
+        "as_closest_canonical": true
+      }
+    },
+    {
+      "name": "ConvertToChannelsFirst",
+      "args": {
+        "fields": "image"
+      }
+    },
+    {
+      "name": "ScaleByResolution",
+      "args": {
+        "fields": "image",
+        "target_resolution": [0.8, 0.8, 5.0]
+      }
+    },
+    {
+      "name": "ScaleIntensityRange",
+      "args": {
+        "fields": "image",
+        "a_min": -1500,
+        "a_max": 500,
+        "b_min": 0.0,
+        "b_max": 1.0,
+        "clip": true
+      }
+    }
+  ],
+  "inference": {
+    "image": "image",
+    "name": "TRTISInference",
+    "args": {
+      "batch_size": 1,
+      "roi": [
+        224,
+        224,
+        32
+      ],
+      "scanning_window": true
+    },
+    "trtis": {
+      "platform": "tensorflow_graphdef",
+      "max_batch_size": 1,
+      "input": [
+        {
+          "name": "NV_MODEL_INPUT",
+          "data_type": "TYPE_FP32",
+          "dims": [
+            1,
+            224,
+            224,
+            32
+          ]
+        }
+      ],
+      "output": [
+        {
+          "name": "NV_MODEL_OUTPUT",
+          "data_type": "TYPE_FP32",
+          "dims": [
+            2,
+            224,
+            224,
+            32
+          ]
+        }
+      ],
+      "instance_group": [
+        {
+          "count": 1,
+          "kind": "KIND_AUTO"
+        }
+      ]
+    },
+    "tf": {
+      "input_nodes": {
+        "image": "NV_MODEL_INPUT"
+      },
+      "output_nodes": {
+        "model": "NV_MODEL_OUTPUT"
+      }
+    }
+  },
+  "post_transforms": [
+    {
+      "name": "ArgmaxAcrossChannels",
+      "args": {
+        "fields": "model"
+      }
+    },
+    {
+      "name": "FetchExtremePoints",
+      "args": {
+        "image_field": "image",
+        "label_field": "model",
+        "points": "points"
+      }
+    },
+    {
+      "name": "CopyProperties",
+      "args": {
+        "fields": [
+          "model"
+        ],
+        "from_field": "image",
+        "properties": [
+          "affine",
+          "original_affine",
+          "as_canonical"
+        ]
+      }
+    },
+    {
+      "name": "RestoreOriginalShape",
+      "args": {
+        "field": "model",
+        "src_field": "image",
+        "is_label": true
+      }
+    }
+  ],
+  "writer": {
+    "name": "WriteNifti",
+    "args": {
+      "field": "model",
+      "dtype": "uint8",
+      "revert_canonical": true
+    }
+  }
+}
+
