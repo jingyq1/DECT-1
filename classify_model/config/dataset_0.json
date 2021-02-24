@@ -1,0 +1,408 @@
+{
+    "label_format": [
+        2
+    ],
+    "training": [
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0095_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0095.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0050_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0050.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0055_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0055.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0058_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0058.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0048_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0048.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0047_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0047.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0096_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0096.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0113_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0113.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0108_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0108.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0110_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0110.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0062_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0062.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0103_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0103.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0107_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0107.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0099_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0099.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0060_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0060.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0059_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0059.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0116_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0116.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0036_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0036.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0057_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0057.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0063_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0063.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0037_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0037.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0098_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0098.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0118_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0118.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0100_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0100.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0043_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0043.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0053_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0053.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0024_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0024.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0090_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0090.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0041_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0041.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0077_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0077.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0093_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0093.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0122_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0122.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0106_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0106.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0094_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0094.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0073_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0073.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0083_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0083.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0087_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0087.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0032_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0032.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0040_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0040.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0097_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0097.nii.gz",
+            "label": [
+                0
+            ]
+        }
+    ],
+    "validation": [
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0109_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0109.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0082_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0082.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0027_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0027.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0070_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0070.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0029_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0029.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0038_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0038.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0067_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0067.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0101_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0101.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0064_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0064.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0117_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0117.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0046_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0046.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0081_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0081.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0039_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0039.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0066_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0066.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0061_1.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0061.nii.gz",
+            "label": [
+                1
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0105_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0105.nii.gz",
+            "label": [
+                0
+            ]
+        },
+        {
+            "image": "/workspace/Data/COVID/COVID_Test_Data/LIDC-IDRI-0112_0.nii.gz",
+            "label_image": "/workspace/Data/COVID/COVID_Test_Data/Mask/0112.nii.gz",
+            "label": [
+                0
+            ]
+        }
+    ]
+}

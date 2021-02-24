@@ -1,0 +1,276 @@
+{
+    "epochs": 300,
+    "num_training_epoch_per_valid": 1,
+    "learning_rate": 5e-6,
+    "multi_gpu": false,
+    "dynamic_input_shape": false,
+    "use_amp": true,
+    "infer_in_training_mode": false,
+    "determinism": {
+      "python_seed": "0",
+      "random_seed": 0,
+      "numpy_seed": 0,
+      "tf_seed": 0
+    },
+    "extra_inputs":
+    [
+        {
+            "args": {
+                "name": "label_image_ph",
+                "shape": [192, 192, 64, 1],
+                "source_dtype": "string",
+                "target_dtype": "float32",
+                "data_key": "label_image"
+            },
+            "for_train": true,
+            "for_val": true
+        }
+    ],
+
+    "train":
+    {
+        "loss":
+        {
+            "name": "MulticlassClassificationLoss"
+        },
+
+        "optimizer":
+        {
+            "name": "Adam"
+        },
+
+        "model":
+        {
+            "name": "DenseNet121",
+            "args": {
+                "weight_decay": 1e-5,
+                "pretrain_weight_name": [],
+                "n_spatial_dim": 3
+            }
+        },
+
+        "pre_transforms":
+        [
+            {
+                "name": "LoadNifti",
+                "args": {
+                    "fields": [
+                        "image",
+                        "label_image"
+                    ],
+                    "as_closest_canonical": true
+                }
+            },
+            {
+                "name": "ScaleIntensityRange",
+                "args": {
+                    "fields": "image",
+                    "a_min": -1000,
+                    "a_max": 500,
+                    "b_min": 0,
+                    "b_max": 1,
+                    "clip": true
+                }
+            },
+            {
+                "name": "CropForegroundObject",
+                "args": {
+                    "fields": "image",
+                    "size": [192, 192, 64],
+                    "label_field": "label_image",
+                    "pad": 5
+                }
+            },
+            {
+                "name": "ScaleIntensityOscillation",
+                "args": {
+                    "fields": "image",
+                    "magnitude": 0.1
+                }
+            },
+            {
+                "name": "AdjustContrast",
+                "args": {
+                    "fields": "image",
+                    "probability": 0.5,
+                    "min_gamma": 0.5,
+                    "max_gamma": 4.5
+                }
+            },
+            {
+                "name": "AddGaussianNoise",
+                "args": {
+                    "fields": "image",
+                    "probability": 0.75,
+                    "variance": 0.1
+                }
+            },
+            {
+                "name": "RandomZoom",
+                "args": {
+                    "image_field": "image",
+                    "label_field": "label_image",
+                    "lower_limits": [0.8, 0.8, 0.8],
+                    "upper_limits": [1.2, 1.2, 1.2],
+                    "keep_size": true,
+                    "probability": 0.25
+                },
+                "disabled": false
+            },
+            {
+                "name": "MaskImage",
+                "args": {
+                    "image_field": "image",
+                    "mask_field": "label_image"
+                },
+                "disabled": true
+            },
+            {
+                "name": "SaveAsNifti",
+                "args": {
+                    "fields": "image",
+                    "out_dir": "{MMAR_CKPT_DIR}",
+                    "interrupt": true
+                },
+                "disabled": true
+            },
+            {
+                "name": "ConvertToChannelsLast",
+                "args": {
+                    "fields": [
+                        "image",
+                        "label_image"
+                    ]
+                }
+            }            
+        ],
+        "aux_ops": [
+            {
+              "name": "ComputeMulticlassAccuracy",
+              "args": {
+                  "tag": "accuracy",
+                  "use_sigmoid_for_accuracy": false
+              }
+            }
+          ],
+
+        "image_pipeline": {
+            "name": "ClassificationKerasImagePipelineWithCache",
+            "args": {
+                "data_list_file_path": "{DATASET_JSON}",
+                "data_file_base_dir": "{DATA_ROOT}",
+                "data_list_key": "training",
+                "output_crop_size": [192, 192, 64],
+                "output_data_format": "channels_last",
+                "output_batch_size": 12,
+                "output_image_channels": 1,
+                "output_data_dims": 3,
+                "num_workers": 8,
+                "prefetch_size": 4,
+                "shuffle": true,
+                "multiprocessing": false,
+                "num_cache_objects": 350,
+                "replace_percent": 0.2,
+                "sampling": "automatic"
+            }
+        }
+    },
+
+    "validate":
+    {
+        "metrics":
+        [
+            {
+                "name": "ComputeAverage",
+                "args": {
+                    "name": "mean_accuracy",
+                    "field": "accuracy",
+                    "report_path": "{MMAR_CKPT_DIR}"
+                }
+            },
+            {
+                "name": "ComputeAverage",
+                "args": {
+                    "name": "valid_mean_neg_loss",
+                    "field": "loss",
+                    "negate_value": true,
+                    "is_key_metric": true
+                }
+            }
+        ],
+
+        "pre_transforms":
+        [
+            {
+                "name": "LoadNifti",
+                "args": {
+                    "fields": [
+                        "image",
+                        "label_image"
+                    ],
+                    "as_closest_canonical": true
+                }
+            },
+            {
+                "name": "ScaleIntensityRange",
+                "args": {
+                    "fields": "image",
+                    "a_min": -1000,
+                    "a_max": 500,
+                    "b_min": 0,
+                    "b_max": 1,
+                    "clip": true
+                }
+            },
+            {
+                "name": "CropForegroundObject",
+                "args": {
+                    "fields": "image",
+                    "size": [192, 192, 64],
+                    "label_field": "label_image",
+                    "pad": 5
+                }
+            },
+            {
+                "name": "MaskImage",
+                "args": {
+                    "image_field": "image",
+                    "mask_field": "label_image"
+                },
+                "disabled": true
+            },
+            {
+                "name": "ConvertToChannelsLast",
+                "args": {
+                    "fields": [
+                        "image",
+                        "label_image"
+                    ]
+                }
+            }
+        ],
+
+        "image_pipeline": {
+            "name": "ClassificationKerasImagePipeline",
+            "args": {
+                "data_list_file_path": "{DATASET_JSON}",
+                "data_file_base_dir": "{DATA_ROOT}",
+                "data_list_key": "validation",
+                "output_crop_size": [192, 192, 64],
+                "output_data_format": "channels_last",
+                "output_batch_size": 12,
+                "output_image_channels": 1,
+                "output_data_dims": 3,
+                "num_workers": 8,
+                "prefetch_size": 4,
+                "shuffle": false,
+                "multiprocessing": false
+            }
+        },
+
+        "inferer":
+        {
+            "name": "TFSimpleInferer"
+        }
+    }
+}

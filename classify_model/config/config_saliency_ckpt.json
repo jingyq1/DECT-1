@@ -1,0 +1,122 @@
+{
+    "batch_size": 1,
+
+    "pre_transforms":
+    [
+        {
+            "name": "LoadNifti",
+            "args": {
+                "fields": [
+                    "image",
+                    "label_image"
+                ],
+                "as_closest_canonical": true
+            }
+        },
+        {
+            "name": "ScaleIntensityRange",
+            "args": {
+                "fields": "image",
+                "a_min": -1000,
+                "a_max": 500,
+                "b_min": 0,
+                "b_max": 1,
+                "clip": true
+            }
+        },
+        {
+            "name": "CropForegroundObject",
+            "args": {
+                "fields": "image",
+                "size": [192, 192, 64],
+                "label_field": "label_image",
+                "pad": 5
+            }
+        },
+        {
+            "name": "MaskImage",
+            "args": {
+                "image_field": "image",
+                "mask_field": "label_image"
+            },
+            "disabled": true
+        },
+        {
+            "name": "ConvertToChannelsLast",
+            "args": {
+                "fields": [
+                    "image",
+                    "label_image"
+                ]
+            }
+        }
+    ],
+
+    "post_transforms":
+    [
+        {
+            "name": "ProcessMulticlassPreds",
+            "args": {
+              "field": "model"
+            }
+        }
+    ],
+
+    "writers":
+    [
+      {
+        "name": "WriteClassificationResult",
+        "args": {
+          "field": "model",
+          "write_path": "{MMAR_EVAL_OUTPUT_PATH}"
+        }
+      },
+      {
+        "name": "WriteNifti",
+        "args": {
+          "field": "processed_input",
+          "dtype": "float32",
+          "write_path": "{MMAR_EVAL_OUTPUT_PATH}",
+          "use_identity": true
+        }
+      },
+      {
+        "name": "WriteNifti",
+        "args": {
+          "field": "saliency",
+          "dtype": "float32",
+          "write_path": "{MMAR_EVAL_OUTPUT_PATH}",
+          "use_identity": true
+        }
+      }
+    ],
+
+    "val_metrics":
+    [
+        {
+            "name": "ComputeMulticlassAverage",
+            "args": {
+              "name": "MulticlassAverage",
+              "field": "model",
+              "label_field": "label",
+              "report_path": "{MMAR_EVAL_OUTPUT_PATH}"
+            }
+        }
+    ],
+
+    "inferer":
+    {
+        "name": "TFSaliencyInferer",
+        "args": {
+            "conv_layer_name": "relu3_blk/Relu:0"
+        }
+    },
+
+    "model_loader":
+    {
+        "name": "CheckpointLoader",
+        "args": {
+          "checkpoint_dir": "{MMAR_CKPT_DIR}"
+        }
+    }
+}
