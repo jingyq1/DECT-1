@@ -1,5 +1,4 @@
-# DD-net Enhanced Covid CT (DDECCT)
-
+# DECT: DD-net Enhanced CT
 Use DD-Net to reconstruct CT images with higher quality, and classify CT images for COVID-19 positive or negative.
 ![image](https://user-images.githubusercontent.com/31482058/109349365-d5cc2580-7843-11eb-9d55-e6e529844635.png)
 
