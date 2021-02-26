@@ -18,8 +18,8 @@ PyTorch CUDA requires Nvidia GPU with compute capability 6.0 or higher. The netw
 
 ## How to run
 
-1. Convert all CT scans to TIFF format.
-2. Put all CT scans in TIFF format into /enhancement_model/Images/original_data/
+1. Convert all CT scans to TIFF format. (TIFF images must be represented in Hounds Field (HF) unit)
+2. Put all CT scans in /enhancement_model/Images/original_data/. Each scan should be in seperate folder.
 3. run /enhancement_model/code/Intergration.py
 
 ```
@@ -27,9 +27,8 @@ python Intergration.py
 ```
 
 ## Output
-
-1. Images/HU_enhanced: post-enhancement CT scan (.tif) in seperated folders
-2. Images/HU_original: pre-enhancement CT scan (.tif) in seperated folders
-3. Images/HU_enhanced_nii: post-enhancement 3D CT scan (.nii)
-4. Images/HU_original_nii: pre-enhancement 3D CT scan (.nii)
-5. Images/Tiff_in_stacks: intermediate result. CT scans containing > 200 images
+Following folders are produced as output from enhancement AI.
+1. Images/HU_enhanced: This folder contains enhanced images generated as output from AI. Each scan are put in seperate folders. Each folder contains TIFF images.
+2. Images/HU_original: This folder contains original CT scan in seperated folders. Each folder contains TIFF images.
+3. Images/HU_enhanced_nii: The folder contains enhanced CT scan in (.nii) format. Each (.nii) file is a 3D lung CT scans.
+4. Images/HU_original_nii: The folder contains original CT scan in (.nii) format. Each (.nii) file is a 3D lung CT scans.
