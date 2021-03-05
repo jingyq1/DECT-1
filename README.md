@@ -8,6 +8,9 @@ Our early results show good improvement in the accuracy of classification of CT 
 
 file:///home/jingyuan/Desktop/Integration/classify_model/eval/ROC.png![image](https://user-images.githubusercontent.com/31482058/110122226-541d5000-7d8d-11eb-8867-b118e1ab0850.png)
 
+![image](https://user-images.githubusercontent.com/31482058/110122848-271d6d00-7d8e-11eb-80d7-b8641edfa9d3.png)
+
+
 
 
 ## Installation
