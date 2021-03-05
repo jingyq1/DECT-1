@@ -8,7 +8,8 @@ Segmentation AI is based on a 3D version of AHNet. Classification AI uses 3D Den
 Our early results show good improvement in the accuracy of classification of CT scans enhanced using DD-Net.
 
 ![image](https://user-images.githubusercontent.com/31482058/110122848-271d6d00-7d8e-11eb-80d7-b8641edfa9d3.png)
-![image](https://user-images.githubusercontent.com/31482058/110123261-b034a400-7d8e-11eb-9a68-b56d3d4e3090.png)
+![image](https://user-images.githubusercontent.com/31482058/110123497-f4c03f80-7d8e-11eb-93c3-ca9d9a933c02.png)
+
 
 
 
