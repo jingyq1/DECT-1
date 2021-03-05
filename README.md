@@ -6,6 +6,9 @@ Our early results show good improvement in the accuracy of classification of CT 
 
 ![image](https://user-images.githubusercontent.com/31482058/110099991-eadb1400-7d6f-11eb-9683-c346b7d8e0b9.png)
 
+file:///home/jingyuan/Desktop/Integration/classify_model/eval/ROC.png![image](https://user-images.githubusercontent.com/31482058/110122226-541d5000-7d8d-11eb-8867-b118e1ab0850.png)
+
+
 
 ## Installation
 
