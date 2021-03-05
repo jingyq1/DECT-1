@@ -4,7 +4,8 @@ Enhancement AI is based on DenseNet and Deconvolution (DDNet) architecture. The 
 Segmentation AI is based on a 3D version of AHNet. Classification AI uses 3D DenseNet-121 architecture. [2]
 Our early results show good improvement in the accuracy of classification of CT scans enhanced using DD-Net.
 
-![image](https://user-images.githubusercontent.com/31482058/110099921-da2a9e00-7d6f-11eb-9a0f-f0dd3c19f6fb.png)
+![image](https://user-images.githubusercontent.com/31482058/110099991-eadb1400-7d6f-11eb-9683-c346b7d8e0b9.png)
+
 
 ## Installation
 
