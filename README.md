@@ -1,5 +1,9 @@
 # DECT: DD-net Enhanced CT
-Use DD-Net to reconstruct CT images with higher quality, and classify CT images for COVID-19 positive or negative.
+DECT (DD-Net Enhanced CT) is a deep learning-based COVID-19 testing framework, which is composed of post-CT Enhancement AI to enhance the quality of CT scans, segmentation AI to segment lung region from CT scans, and CT Classification AI to predict the possibility for COVID-19. 
+Enhancement AI is based on DenseNet and Deconvolution (DDNet) architecture. The AI generates high-resolution enhanced CT images. [1]
+Segmentation AI is based on a 3D version of AHNet. Classification AI uses 3D DenseNet-121 architecture. [2]
+Our early results show good improvement in the accuracy of classification of CT scans enhanced using DD-Net.
+
 ![image](https://user-images.githubusercontent.com/31482058/109349365-d5cc2580-7843-11eb-9d55-e6e529844635.png)
 
 
