@@ -18,9 +18,10 @@ PyTorch CUDA requires Nvidia GPU with compute capability 6.0 or higher. The netw
 
 ## How to run
 
-1. Convert all CT scans to TIFF format. (TIFF images must be represented in Hounds Field (HF) unit)
-2. Put all CT scans in /enhancement_model/Images/original_data/. Each scan should be in seperate folder.
-3. run /enhancement_model/code/Intergration.py
+1. Convert all CT scans to TIFF format.
+2. Put all CT scans in TIFF format into ../DECT/enhancement_model/Images/original_data/
+3. Replace the root path in Intergration.py with '../DECT/enhancement_model'
+4. run ../DECT/enhancement_model/code/Intergration.py
 
 ```
 python Intergration.py
